@@ -1,8 +1,15 @@
 import java.util.*;
 import java.io.*;
 
+/**
+ * Decodes a message based on a file
+ */
 public class HuffDecode {
 
+    /**
+     * Main method, runs the decoding program
+     * @param args arguments 
+     */
     public static void main(String[] args) {    
     
         //Reads in a file 

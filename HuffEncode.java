@@ -1,7 +1,15 @@
 import java.util.*;
 import java.io.*;
 
+/**
+ * Encodes a message based on a file
+ */
 public class HuffEncode {
+
+    /**
+     * Main method, runs the program to encode a message
+     * @param args arguments 
+     */
     public static void main(String[] args) {
         
         String filename = "DefaultTree.txt";

@@ -1,22 +1,33 @@
 import java.util.*;
 import java.io.*;
 
+/**
+ * Creates a HuffTree, extension of a Binary Tree
+ */
 public class HuffTree extends BinaryTree<Character>{
 
-    //Character data;
-
-    //HuffTree left;
-
-    //HuffTree right;
-
+    /**
+     * Constructor for a tree 
+     * @param e value for a root
+     */
     public HuffTree(Character e){
         super(e);
     }
 
+    /**
+     * Constructor for a node
+     * @param data value of node
+     * @param left node for left child
+     * @param right node for right child
+     */
     public HuffTree(Character data, HuffTree left, HuffTree right){
         super(data, left, right);
     }
 
+    /**
+     * Set value for left child of an existing node
+     * @param left node for left child
+     */
     public void setLeft(HuffTree left){
         if(left instanceof HuffTree){
             super.setLeft(left);
@@ -26,18 +37,35 @@ public class HuffTree extends BinaryTree<Character>{
         }
     }
 
+    /**
+     * Set value for right child of an existing node
+     * @param right node for right child
+     */
     public void setRight(HuffTree right){
         super.setRight(right);
     }
 
+    /**
+     * Get left child of an exisiting node
+     * @return left child
+     * 
+     */
     public HuffTree getLeft(){
         return (HuffTree) super.getLeft();
     }
 
+    /**
+     * Get right child of an existing node
+     * @return right child
+     */
     public HuffTree getRight(){
         return (HuffTree) super.getRight();
     }
 
+    /**
+     * Get data of an existing node
+     * @return data of a node with a Character type
+     */
     public Character getData(){
         if (super.getData() instanceof Character) {
             return super.getData();
@@ -46,6 +74,11 @@ public class HuffTree extends BinaryTree<Character>{
         }
     }
 
+    /**
+     * Transverses a tree based on an input path
+     * @param input path that the method follows
+     * @return node that the path lands on
+     */
     public HuffTree followPath(String input){
 
         char[] path = input.toCharArray();
@@ -75,6 +108,11 @@ public class HuffTree extends BinaryTree<Character>{
         return tree;
     }
 
+    /**
+     * Reads a file into a HuffTree
+     * @param filename file to be made into a tree
+     * @return the resulting HuffTree
+     */
     public static HuffTree readHuffTree(String filename){
 
         HuffTree root = new HuffTree((char)0); //initializes the root as 0 
@@ -97,6 +135,12 @@ public class HuffTree extends BinaryTree<Character>{
         return root;
     }
 
+    /**
+     * Writes the HuffTree recursively based on the given line in a file
+     * @param line line to be turned into a tree
+     * @param root tree that the line gets added to
+     * @return the tree made from the line
+     */ 
     public HuffTree writeHuffTree(String line, HuffTree root){
 
         char[] arr = line.toCharArray();
@@ -124,6 +168,10 @@ public class HuffTree extends BinaryTree<Character>{
         return root; 
     }
 
+    /**
+     * Main method
+     * @param args arguments
+     */
     public static void main(String[] args) {
         String filename = "Default.txt";
 
