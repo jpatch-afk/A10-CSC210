@@ -1,7 +1,6 @@
 import java.util.*;
 import java.io.*;
 
-
 public class HuffDecode {
 
     public static void main(String[] args) {    
